@@ -10,7 +10,46 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-Hello World
+<div class="todo">
+    <h1 class = todo__header> To Do Application</h1>
+    <div class = "todo__headerContainer">
+        <p class="font-weight-bold"> What you want to do Today? </p>
+        <form class="todo__form">
+
+            <input placeholder="Your Task Name" type = "text" name = "todoitem">
+            <input class = "btn btn-info" type = "submit" value = "Add Item">
+        </form>
+    </div>
+
+        <div class ="card todo__innerItemContainer">
+        <h2 class = "todo_itemHeader"> To Do</h2>
+            <ul class = "todo__container">
+                <li class = "todo__item">
+                    <p> To Do Tasks </p>
+                    <a class = "btn btn-outline-success" href = "#">
+                        Complete ➡️
+                    </a>
+                    <a class = todo_close href="#">❌</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class ="card todo__innerItemContainer">
+        <h2 class = "todo_itemHeader"> Completed</h2>
+            <ul class = "todo__container">
+                <li class = "todo__item">
+                    <p> Finished Tasks </p>
+                    <a class = "btn btn-outline-secondary" href = "#">
+                        ⬅️ Undo
+                    </a>
+                    <a class = todo_close href="#">❌</a>
+
+                </li>
+            </ul>
+        </div>
+
+
+</div>
 
 </body>
 </html>
