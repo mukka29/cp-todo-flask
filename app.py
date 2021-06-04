@@ -35,6 +35,13 @@ def complete(id):
     return redirect(url_for('index'))
 
 
+@app.route('/in_progress/<id>')
+def in_progress(id):
+    todo = Todo.query.filter_by(id=int(id)).first()
+    todo.complete = False
+    db.session.commit()
+    return redirect(url_for('index'))
+
 @app.route('/uncheck/<id>')
 def uncheck(id):
     todo = Todo.query.filter_by(id=int(id)).first()

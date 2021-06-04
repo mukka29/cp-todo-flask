@@ -32,6 +32,22 @@
                 {% for todo in incomplete %}
                 <li class="todo__item">
                     <p>{{ todo.text }}</p>
+                    <a class="btn btn-warning" href="{{ url_for('in_progress', id=todo.id) }}">In Progress
+                        ➡️</a>
+                    <a class="todo__close" href="{{ url_for('delete', id=todo.id) }}">❌</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+
+         <div class="card todo__innerItemContainer">
+            <h2 class="todo__itemHeader">In Progress</h2>
+
+            <ul class="todo__container">
+                {% for todo in incomplete %}
+                <li class="todo__item">
+                    <p>{{ todo.text }}</p>
                     <a class="btn btn-outline-success" href="{{ url_for('complete', id=todo.id) }}">Complete
                         ➡️</a>
                     <a class="todo__close" href="{{ url_for('delete', id=todo.id) }}">❌</a>
