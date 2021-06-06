@@ -6,6 +6,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///todo.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
+
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String(200))
@@ -41,6 +42,7 @@ def in_progress(id):
     todo.complete = False
     db.session.commit()
     return redirect(url_for('index'))
+
 
 @app.route('/uncheck/<id>')
 def uncheck(id):
